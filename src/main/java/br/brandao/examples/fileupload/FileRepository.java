@@ -12,7 +12,7 @@ import javax.inject.Singleton;
 @Singleton
 public class FileRepository {
 
-	public static final String FILE_PATTERN = "^[a-z_A-Z0-9]{1}\\.[a-z_A-Z0-9]{1}$";
+	public static final String FILE_PATTERN = "^([a-z_A-Z0-9]+)\\.([a-z_A-Z0-9]{1,20})$";
 	
     private File root;
     
@@ -29,7 +29,7 @@ public class FileRepository {
     
 	public File getFile(String name){
 		
-		if(name == null || name.matches(FILE_PATTERN)){
+		if(name == null || !name.matches(FILE_PATTERN)){
 			return null;
 		}
 		
@@ -39,6 +39,10 @@ public class FileRepository {
 	
 	public File addFile(File file, String name){
 		try{
+			if(name == null || !name.matches(FILE_PATTERN)){
+				return null;
+			}
+			
 			File dest = new File(this.root, name);
 			this.cp(file, dest);
 			return dest;
@@ -50,7 +54,7 @@ public class FileRepository {
 
 	public File deleteFile(String name){
 		
-		if(name == null || name.matches(FILE_PATTERN)){
+		if(name == null || !name.matches(FILE_PATTERN)){
 			return null;
 		}
 		
