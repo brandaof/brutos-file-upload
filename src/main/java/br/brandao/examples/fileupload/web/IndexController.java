@@ -28,6 +28,11 @@ public class IndexController{
 	@Inject
 	private FileRepository repository;
 	
+	@Action("/")
+    public void index(){
+		WebFlowController.redirectTo("/files");
+	}
+    		
 	@Action("/files")
 	@RequestMethod(RequestMethodTypes.POST)
     public void addFile(
