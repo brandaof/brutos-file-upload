@@ -1,8 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Context>
 
-	<WatchedResource>WEB-INF/web.xml</WatchedResource>
-
 	<Resource 
 		auth="Container" 
 		factory="org.jboss.weld.resources.ManagerObjectFactory" 
