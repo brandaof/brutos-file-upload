@@ -7,7 +7,6 @@ import javax.inject.Inject;
 
 import org.brandao.brutos.annotation.Action;
 import org.brandao.brutos.annotation.Basic;
-import org.brandao.brutos.annotation.Transient;
 import org.brandao.brutos.annotation.View;
 import org.brandao.brutos.annotation.web.RequestMethod;
 import org.brandao.brutos.annotation.web.RequestMethodTypes;
@@ -24,7 +23,6 @@ import br.brandao.examples.fileupload.FileRepository;
 @Action(value="/files", view=@View("files/list"))
 public class IndexController{
 
-	@Transient
 	@Inject
 	private FileRepository repository;
 	
@@ -73,8 +71,8 @@ public class IndexController{
 		return null;
     }
 
-	@Transient
     public String[] getFiles() {
 		return this.repository.getFiles();
     }
+    
 }
