@@ -7,6 +7,11 @@
 	<name>brutos-file-upload</name>
 	<packaging>war</packaging>
 
+	<properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+	</properties>
+
 	<repositories>
 		<repository>
 			<id>brutos-mvc</id>
@@ -16,12 +21,6 @@
 	</repositories>
 	
 	<dependencies>
-		<!-- Brutos -->
-		<dependency>
-			<groupId>org.brandao</groupId>
-			<artifactId>brutos-web</artifactId>
-			<version>2.0-rc3</version>
-		</dependency>
 		<!-- Weld -->
 		<dependency>
 			<groupId>org.jboss.weld.servlet</groupId>
@@ -39,6 +38,12 @@
 			<groupId>jstl</groupId>
 			<artifactId>jstl</artifactId>
 			<version>1.2</version>
+		</dependency>
+		<!-- Brutos -->
+		<dependency>
+			<groupId>org.brandao</groupId>
+			<artifactId>brutos-web</artifactId>
+			<version>3.0-b1</version>
 		</dependency>
 		<!-- provided -->
 		<dependency>
@@ -59,7 +64,6 @@
 					<source>1.8</source>
 					<target>1.8</target>
 					<encoding>${project.build.sourceEncoding}</encoding>
-					<outputEncoding>${project.reporting.outputEncoding}</outputEncoding>
 				</configuration>
 			</plugin>
 		</plugins>
